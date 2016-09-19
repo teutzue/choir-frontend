@@ -14,12 +14,20 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
+    <repositories>
+      <repository>
+        <id>choir-repo</id>
+        <name>Helges Repo</name>
+        <url>http://10.13.192.67:8082/artifactory/libs-release-local</url>
+      </repository>
+      <repository>
+        <id>choir-repo-snapshot</id>
+        <name>Helges Snapshot Repo</name>
+        <url>http://10.13.192.67:8082/artifactory/libs-snapshot-local</url>
+      </repository>
+    </repositories>
+
     <dependencies>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>choir-contract</artifactId>
-            <version>${project.version}</version>
-        </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>choir-backend-mock</artifactId>
