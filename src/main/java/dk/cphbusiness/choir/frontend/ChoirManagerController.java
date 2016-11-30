@@ -11,16 +11,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import static dk.cphbusiness.choir.contract.ChoirManager.*;
 import java.util.Collection;
+import javax.ejb.EJB;
 
 @WebServlet(name = "ChoirManagerController", urlPatterns = {"/ChoirManager"})
 public class ChoirManagerController extends HttpServlet {
-  
-  private ChoirManager manager = new ChoirManagerDummy();
 
+  @EJB
+  private ChoirManager manager;
+  
+  //private ChoirManager manager = new ChoirManagerDummy();
+
+  
+  
+  
   @Override
   protected void service(
-      HttpServletRequest request,
-      HttpServletResponse response
+      HttpServletRequest request, // this is an interface - mock that
+      HttpServletResponse response // this is an interface - mock that
       ) throws ServletException, IOException {
     PrintWriter out = response.getWriter();
     try {

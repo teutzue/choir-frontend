@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
-    <repositories>
+    <!--repositories>
       <repository>
         <id>choir-repo</id>
         <name>Helges Repo</name>
@@ -25,13 +25,24 @@
         <name>Helges Snapshot Repo</name>
         <url>http://139.59.151.102:8082/artifactory/libs-snapshot-local</url>
       </repository>
-    </repositories>
+    </repositories-->
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>choir-backend-mock</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jmock</groupId>
+            <artifactId>jmock-junit4</artifactId>
+            <version>2.8.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>dk.cphbusiness</groupId>
+            <artifactId>choir-contract</artifactId>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>javax</groupId>
@@ -116,8 +127,9 @@
             </configuration>
         </plugin>
 
-            -->
-        </plugins>
-    </build>
+      -->
+
+    </plugins>
+  </build>
 
 </project>
