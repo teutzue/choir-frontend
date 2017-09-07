@@ -17,9 +17,9 @@ import javax.ejb.EJB;
 public class ChoirManagerController extends HttpServlet {
 
   @EJB
-  private ChoirManager manager;
+  //private ChoirManager manager;
   
-  //private ChoirManager manager = new ChoirManagerDummy();
+  private ChoirManager manager = new ChoirManagerDummy();
 
   
   
