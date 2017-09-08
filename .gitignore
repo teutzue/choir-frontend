@@ -1,2 +1,5 @@
 !**/*.war
 /target/
+.gradle
+build/
+gradle

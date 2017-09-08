@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+
+group = 'dk.cphbusiness'
+version = '1.0-SNAPSHOT'
+
+description = """choir-frontend"""
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+configurations {
+  providedCompile
+}
+
+repositories {
+        
+     maven { url "http://46.101.154.221:8082/artifactory/libs-release-local" }
+     maven { url "http://46.101.154.221:8082/artifactory/libs-snapshot-local" }
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'dk.cphbusiness', name: 'choir-contract', version:'1.0.1'
+    compile group: 'dk.cphbusiness', name: 'choir-backend-mock', version:'1.0-SNAPSHOT'
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version:'3.0.1'
+    providedCompile group: 'javax', name: 'javaee-web-api', version:'7.0'
+}
