@@ -1,4 +1,5 @@
 !**/*.war
+nb-configurations.xml
 target/
 .gradle
 build/
