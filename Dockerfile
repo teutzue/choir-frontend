@@ -1,11 +1,9 @@
-FROM eguahlak/glassfish-cph
-MAINTAINER AKA RHP
+FROM java
+MAINTAINER AKA RHP JEEP
 
-COPY ./target/*.war /opt/glassfish4/glassfish/domains/domain1/autodeploy/Choir.war
+COPY ./choir-frontend /choir
 
-# RUN wget \
-#    https://github.com/eguahlak/choir-frontend/blob/master/target/choir-frontend-1.0-SNAPSHOT.war?raw=true \
-#    -O /opt/glassfish4/glassfish/domains/domain1/autodeploy/Choir.war
+EXPOSE 8080
 
-CMD [ "asadmin", "start-domain", "-v" ]
+CMD [ "/bin/bash", "-c", "/choir/start.sh" ]
 

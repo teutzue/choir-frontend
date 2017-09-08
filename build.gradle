@@ -1,5 +1,5 @@
 apply plugin: 'java'
-apply plugin: 'maven'
+apply plugin: 'war'
 apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
 
 group = 'dk.cphbusiness'
@@ -16,6 +16,14 @@ tasks.withType(JavaCompile) {
 configurations {
   providedCompile
 }
+
+
+gretty {
+  contextPath = '/choir-frontend'
+  // ... many more properties
+}
+
+
 
 repositories {
         
